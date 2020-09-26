@@ -1,6 +1,8 @@
 <template>
 	<view class="content">
 		<btn color="#f00" @myEvent="custEvent">使用vue的自定义事件,子组件往父组件传事件</btn>
+		<image src="/static/logo.png" style="width: 72rpx;height: 72rpx;" class="logo box"></image>
+		<text>uni-app常用的组件标签无非就是: button,text,image,input</text>
 	</view>
 </template>
 
@@ -58,28 +60,33 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	$width : 200rpx;
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
-
 	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
+		height: $width;
+		width: $width;
+		margin-top: $width;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 50rpx;
+		padding: 40rpx;
+		border-radius: 8rpx;
+		// & 表示父级|同级???,表示和content是一起的
+		&.box{
+			border: 1px solid #eee;
+		}
 	}
 
 	.text-area {
 		display: flex;
 		justify-content: center;
 	}
-
 	.title {
 		font-size: 36rpx;
 		color: #8f8f94;
